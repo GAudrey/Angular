@@ -1,0 +1,15 @@
+<!--
+    On peut utiliser une fonction au lieu d'une variable
+-->
+<p class="red">{{ victoryScream }}</p>
+{{ getBanana() }}
+
+<ul>
+    <!-- Faire le for dans la balise li parce qu'il va boucler les li ! Ne pas utiliser un const, ça plante. Pourquoi ? On ne sait pas. (Le var n'existe pas !!!) -->
+    <li *ngFor="let movie of movies">
+        {{ movie.title }}
+        <p>
+            {{ movie.description }}
+        </p>
+    </li>
+</ul>
