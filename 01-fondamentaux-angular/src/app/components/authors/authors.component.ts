@@ -7,8 +7,9 @@ import { AuthorsListService, Author } from '../../services/authors-list.service'
   styleUrls: ['./authors.component.css']
 })
 export class AuthorsComponent {
-  declare authors: Author[];
+  authors: Author[];
 
+  // private car n'a pas besoin de sortir de la classe
   constructor(private authorsListService: AuthorsListService) {
     this.authors = this.authorsListService.getAllAuthors();
   }

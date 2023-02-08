@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { MoviesService, Movie } from '../../services/movies.service';
 
 @Component({
-  // fonctionne comme un sélecteur css, utiliser une classe est un mauvais plan, préférer l'HTML
+  // Fonctionne comme un sélecteur css, utiliser une classe est un mauvais plan, préférer l'HTML
   selector: '.firstComponent',
-  // chemin vers le fichier HTML lié à ma classe
+  // Cshemin vers le fichier HTML lié à ma classe
   templateUrl: './my-first-component.component.html',
-  // N.O.N., JAMAIS ! N'y pense même pas ! Mais on peut écrire de l'HTML directement si on remplace templateUrl par template
+  // N.O.N., JAMAIS ! N'y pense même pas !
+  // Mais on peut écrire de l'HTML directement si on remplace templateUrl par template
   // Note de Leinox : peut s'envisager s'il n'existe que très peu de lignes HTML pour éviter de gérer un autre fichier ==> motivation : flemme
     // template: `
     //   <div>
@@ -26,10 +27,9 @@ export class MyFirstComponentComponent {
   // On va utiliser cette propriété/variable et l'afficher dans notre HTML
   victoryScream = 'Hourra !';
 
-  // Ne nécessite un déclare que si non-assigné à un constructeur
+  // Ne nécessite un declare que si non-assigné à un constructeur
   declare movies: Movie[];
 
-  // raccourci en TS pour 
   constructor(private moviesService: MoviesService) {
     this.movies = this.moviesService.getAllMovies();
   }
