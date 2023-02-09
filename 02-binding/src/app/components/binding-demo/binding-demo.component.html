@@ -1,0 +1,24 @@
+<!-- Entre [], on déclare que ce qui se trouvera entre "" sera une variable, pas du texte -->
+<input type="text" [disabled]="isNotAllowedToWrite" (keyup.enter)="changeUserName(userNameInput)" #userNameInput>
+
+<p>
+    Binding à deux sens
+</p>
+<!-- Pas besoin de créer une fonction dans notre classe, mais pas de contrôle sur les changements.  C'est HTML qui met la propriété à jour et non pas le TS comme dans l'autre input -->
+<input type="text" [disabled]="isNotAllowedToWrite" [(ngModel)] ="userName">
+
+<!-- Va venir rajouter une classe if true -->
+<p [class.premium]="isPremium" [style.backgroundColor]="isPremium ? 'plum' : 'none'">
+    {{ userName }}
+</p>
+
+<!-- ng permet de faire la même chose qu'au-dessus mais sur plusieurs lignes -->
+<p [ngClass]="{
+    premium: isPremium,
+    pigeon: isPremium
+}" [ngStyle]="{
+    border: isPremium ? '1px solid midnightblue' : 'none',
+    fontSize: isPremium ? '32px' : '1em'
+}">
+    Respectez les loutres svp. Le reste, c'est pas grave.
+</p>
