@@ -1,0 +1,51 @@
+<app-postcard postcardTitle="New Title" (clickTitle)="handleClickTitle($event)">
+    <!-- ng-container disparaît une fois qu'il a été traîté, permet de ne pas générer de balises inutiles pour insérer du contenu -->
+    <ng-container class="content">
+        <span>Magic Content</span>
+    </ng-container>
+</app-postcard>
+
+<!-- Equivalent à la création d'une variable à appeler -->
+<ng-template #coffee>
+    <pre>
+         )  (
+        (   ) )
+         ) ( (
+    mrf_______)_
+    .-'---------|  
+   ( C|/\/\/\/\/|
+    '-./\/\/\/\/|
+      '_________'
+       '-------'
+    </pre>
+</ng-template>
+
+<ng-template #cat>
+    <pre>
+             *     ,MMM8&&&.            *
+                  MMMM88&&&&&    .
+                 MMMM88&&&&&&&
+     *           MMM88&&&&&&&&
+                 MMM88&&&&&&&&
+                 'MMM88&&&&&&'
+                   'MMM8&&&'      *
+          |\___/|
+          )     (             .              '
+         =\     /=
+           )===(       *
+          /     \
+          |     |
+         /       \
+         \       /
+  _/\_/\_/\__  _/_/\_/\_/\_/\_/\_/\_/\_/\_/\_
+  |  |  |  |( (  |  |  |  |  |  |  |  |  |  |
+  |  |  |  | ) ) |  |  |  |  |  |  |  |  |  |
+  |  |  |  |(_(  |  |  |  |  |  |  |  |  |  |
+  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+  jgs|  |  |  |  |  |  |  |  |  |  |  |  |  |
+    </pre>
+</ng-template>
+
+<div *ngIf=" 1 === 1 then coffee else cat">
+    Txt, what txt?
+</div>
