@@ -25,9 +25,18 @@
   <p *ngSwitchCase="'kanban'">
     <img src="https://thumbs.gfycat.com/WaterloggedFoolhardyIndianjackal-size_restricted.gif" alt="gif post-it Bruce Almighty">
   </p>
-  <p *ngSwitchDefault="'banane'">
+  <p *ngSwitchDefault>
     <img src="https://i.pinimg.com/originals/61/b2/86/61b28679754e735335d8f97f2cf7b8b9.gif" alt="gif Dr Who Banana are good">
   </p>
 </div>
 <button (click)="viewmode = 'list'">LIST</button>
 <button (click)="viewmode = 'kanban'">KANBAN</button>
+
+
+<!-- Pipe -->
+<div>
+  <!-- L'ordre est important, les pipes sont appliqués les uns après les autres -->
+  <p>{{ "mArIO" | lowercase | uppercase }}</p>
+  <p>{{ "42" | currency : 'EUR'}}</p>
+  <p>{{ "Wibbly wobbly, timey wimey, stuff." | spongebob : 'Imaginons' : 'Que' : 42 }}</p>
+</div>
