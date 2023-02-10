@@ -10,6 +10,5 @@ export class AppComponent {
 
   handleClickTitle(title: string) {
     console.log(`You've clicked on ${title}`);
-    
   }
 }

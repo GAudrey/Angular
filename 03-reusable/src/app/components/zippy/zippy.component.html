@@ -1,0 +1,8 @@
+<div>
+    <h3 (click)="clickedTitle()">
+        Le super titre cliquable
+    </h3>
+    <p *ngIf="isClicked == true">
+        <ng-content select=".zippyContent"></ng-content>
+    </p>
+</div>

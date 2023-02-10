@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { PostcardComponent } from './components/postcard/postcard.component';
+import { ZippyComponent } from './components/zippy/zippy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostcardComponent
+    PostcardComponent,
+    ZippyComponent
   ],
   imports: [
     BrowserModule
