@@ -1,8 +1,20 @@
-<div>
+<!-- <div>
     <h3 (click)="clickedTitle()">
         Le super titre cliquable
     </h3>
     <p *ngIf="isClicked == true">
         <ng-content select=".zippyContent"></ng-content>
     </p>
+</div> -->
+
+<!-- Correction -->
+
+<div>
+    <h3 (click)="toggleContentVisibility()">
+        {{ title }} - {{ manager }}
+    </h3>
+    <p>Cliqué {{ clickCount }}</p>
+    <div [hidden]="!isToggled">
+        <ng-content></ng-content>
+    </div>
 </div>

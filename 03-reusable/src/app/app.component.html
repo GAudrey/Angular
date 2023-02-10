@@ -50,7 +50,7 @@
     Txt, what txt?
 </div>
 
-<app-zippy>
+<!-- <app-zippy>
     <ng-container class="zippyContent">        
 <pre>            *     ,MMM8&&&.            *
                  MMMM88&&&&&    .
@@ -73,5 +73,18 @@
  |  |  |  |(_(  |  |  |  |  |  |  |  |  |  |
  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
  jgs|  |  |  |  |  |  |  |  |  |  |  |  |  |</pre>
+    </ng-container>
+</app-zippy> -->
+
+<app-zippy title="Ma collection de loutres" manager="Dramix" [isToggled]="true" [clickCount]="clickCountPerAnimal.otter" (titleClicked)="updatedClickCount('otter')">
+    <ng-container>
+        <p>Aimez les loutres ! ♥</p>
+        <img src="https://media.tenor.com/lwowvCpVB1cAAAAC/kiss-otter.gif">
+    </ng-container>
+</app-zippy>
+<app-zippy title="Ma collection de hiboux" manager="Enza"  [clickCount]="clickCountPerAnimal.owl" (titleClicked)="updatedClickCount('owl')">
+    <ng-container>
+        <p>Aimez les hiboux aussi ! ♥</p>
+        <img src="https://www.photofunky.net/output/image/9/9/5/4/99547f/photofunky.gif">
     </ng-container>
 </app-zippy>
