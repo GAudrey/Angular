@@ -1,0 +1,33 @@
+<!-- Quand la condition lée à notre ngIf renvoie faux, l'HTML n'apparaît pas sur la page -->
+<div *ngIf="false">
+  <p>Texte caché à cause d'une condition.</p>
+</div>
+
+<!-- Quand elle est vraie, l'HTML apparaît sur la page -->
+<div *ngIf="true">
+  <p>Texte non caché parce que la condition est vraie.</p>
+</div>
+
+<ul>
+  <li *ngFor="let color of colors; index as i; even as isEven" [ngStyle]="{color: colors[i]}">
+    {{ color }}
+    <p *ngIf="isEven">
+      Cette couleur se trouve à un index pair.
+    </p>
+  </li>
+</ul>
+
+<!-- Le case du switch se choisira par rapport à la valeur de la propriété viewmode -->
+<div [ngSwitch]="viewmode">
+  <p *ngSwitchCase="'list'">
+    <img src="https://i.makeagif.com/media/11-24-2018/OD6GJR.gif" alt="gif Crowley list">
+  </p>
+  <p *ngSwitchCase="'kanban'">
+    <img src="https://thumbs.gfycat.com/WaterloggedFoolhardyIndianjackal-size_restricted.gif" alt="gif post-it Bruce Almighty">
+  </p>
+  <p *ngSwitchDefault="'banane'">
+    <img src="https://i.pinimg.com/originals/61/b2/86/61b28679754e735335d8f97f2cf7b8b9.gif" alt="gif Dr Who Banana are good">
+  </p>
+</div>
+<button (click)="viewmode = 'list'">LIST</button>
+<button (click)="viewmode = 'kanban'">KANBAN</button>

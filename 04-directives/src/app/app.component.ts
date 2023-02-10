@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '04-directives';
+
+  colors = ['purple', 'indigo', 'darkslateblue', 'violet', 'plum'];
+
+  viewmode = 'banane';
 }
