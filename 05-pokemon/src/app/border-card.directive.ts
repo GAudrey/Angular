@@ -4,21 +4,24 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
   selector: '[pkmBorderCard]' // fait référence à un attribut, pas une div
 })
 export class BorderCardDirective {
+  private initialColor: string = '#f5f5f5';
+  private defaultColor: string = '#7fff00';
+  private defaultHeight: number = 125;
 
   constructor(private el: ElementRef) {
-    this.setHeight(125);
-    this.setBorder('#f5f5f5');
+    this.setHeight(this.defaultHeight);
+    this.setBorder(this.initialColor);
   }
 
   @Input("pkmBorderCard") declare borderColor: string;
 
   @HostListener("mouseenter") onMouseEnter() {
     // Va déterminer la couleur de notre div lors du hover
-    this.setBorder(this.borderColor || "#7fff00");
+    this.setBorder(this.borderColor || this.defaultColor);
   }
   @HostListener("mouseleave") onMouseLeave() {
     // Va déterminer la couleur de notre div lors du hover
-    this.setBorder("#f5f5f5");
+    this.setBorder(this.initialColor);
   }
 
     // ElementRef vient d'Angularcore et va nous permettre d'avoir la référence de l'élem sur lequel nous poitons
