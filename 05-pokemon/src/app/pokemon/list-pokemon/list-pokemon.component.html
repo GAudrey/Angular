@@ -1,9 +1,7 @@
-<h1>Liste de Pokémons</h1>
-
 <div class="container">
   <div class="row">
     <div *ngFor="let pokemon of pokemonList" class="col m4 s6">
-        <div class="card horizontal" pkmBorderCard="burlywood">
+        <div (click)="goToPokemon(pokemon)" class="card horizontal pointer" pkmBorderCard="burlywood">
           <div class="card-image">
             <img [src]="pokemon.picture" alt="pokemon">
           </div>
