@@ -1,20 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { POKEMONS } from '../mock-pokemon'; // importe liste de pokemons
+// import { POKEMONS } from '../mock-pokemon'; // importe liste de pokemons
 import { Pokemon } from '../pokemon'; // importe interface pokemon pour vérifier typage
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-list-pokemon',
   templateUrl: './list-pokemon.component.html',
-  styleUrls: ['./list-pokemon.component.css']
+  styleUrls: ['./list-pokemon.component.css'],
 })
-export class ListPokemonComponent {
-  pokemonList: Pokemon[] = POKEMONS;
+export class ListPokemonComponent implements OnInit {
+  // pokemonList: Pokemon[] = POKEMONS;
 
-  constructor(private router: Router){
+  declare pokemonList: Pokemon[];
 
+  constructor(private router: Router, private pokemonService: PokemonService) { }
+
+  ngOnInit() {
+    this.pokemonList = this.pokemonService.getPokemonList();
   }
-
+  
   goToPokemon(pokemon: Pokemon) {
     this.router.navigate(['/pokemon', pokemon.id])
   }

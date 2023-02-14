@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
   // import { ListPokemonComponent } from './pokemon/list-pokemon/list-pokemon.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PokemonModule } from './pokemon/pokemon.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PokemonModule } from './pokemon/pokemon.module';
   imports: [
     BrowserModule,
     // Bien préciser les routes enfants AVANT, plus restrictif vers le plus général
+    FormsModule,
     PokemonModule,
     AppRoutingModule,
   ],
