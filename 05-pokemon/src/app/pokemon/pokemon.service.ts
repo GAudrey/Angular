@@ -29,6 +29,7 @@ export class PokemonService {
       'Vol', 
       'Combat', 
       'Psy',
+      'Poison'
     ]
   }
 }
