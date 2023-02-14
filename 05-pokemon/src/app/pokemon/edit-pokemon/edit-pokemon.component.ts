@@ -12,6 +12,7 @@ import { PokemonService } from '../pokemon.service';
   </p>
   <app-pokemon-form *ngIf="pokemon" [pokemon]="pokemon"></app-pokemon-form>
   `,
+  styleUrls: []
 })
 export class EditPokemonComponent implements OnInit{
   pokemon: Pokemon | undefined;
@@ -24,7 +25,10 @@ export class EditPokemonComponent implements OnInit{
     const pokemonID: string | null = this.route.snapshot.paramMap.get('id');
 
     if(pokemonID) {
-      this.pokemon = this.pokemonService.getPokemonByID(+pokemonID);
+        // this.pokemon = this.pokemonService.getPokemonByID(+pokemonID);
+      
+      /* ------------------ Pour requêtre HTTP ------------------ */
+      this.pokemonService.getPokemonByID(+pokemonID).subscribe(myPokemon => this.pokemon = myPokemon);
     }
   }
 }
